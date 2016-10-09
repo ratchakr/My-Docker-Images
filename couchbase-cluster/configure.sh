@@ -4,7 +4,7 @@ set -m
 
 /entrypoint.sh couchbase-server &
 
-sleep 15
+sleep 60
 
 echo "Calling CB REST services to set up the Couchbase Server with My Settings"
 
@@ -17,6 +17,6 @@ curl -v http://127.0.0.1:8091/settings/web -d port=8091 -d username=Administrato
 # Setup Memory Optimized Indexes
 curl -i -u Administrator:password -X POST http://127.0.0.1:8091/settings/indexes -d 'storageMode=memory_optimized'
 
-curl -v -X POST http://127.0.0.1:8091/pools/default/buckets -u Administrator:password -d 'name=testbucket' -d 'ramQuotaMB=200' -d 'authType=none' -d 'proxyPort=11222' 
+curl -v -X POST http://127.0.0.1:8091/pools/default/buckets -u Administrator:password -d 'name=default' -d 'ramQuotaMB=200' -d 'authType=none' -d 'proxyPort=11222' 
 
 fg 1
