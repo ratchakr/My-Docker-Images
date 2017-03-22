@@ -1,8 +1,8 @@
 set -m
 
-echo "listing directories on the container"
+#echo "listing directories on the container"
 
-ls
+#ls
 
 echo "docker host ip = " $DOCKER_HOST_IP 
 
@@ -10,9 +10,9 @@ echo "docker host ip = " $DOCKER_HOST_IP
 
 echo "sleeping..."
 
-sleep 30
+sleep 20
 
-echo "Start configuring env by calling Rest endpoints"
+echo "Start configuring env by calling REST endpoints"
 
 
 #curl -v -X POST http://192.168.99.100:8091/pools/default -d memoryQuota=256 -d indexMemoryQuota=256 -d fullTextMemoryQuota=256
